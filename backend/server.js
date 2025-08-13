@@ -1,7 +1,6 @@
 import express from 'express'
 
 const app = express()
-app.use(express.static('dist'))
 app.get('/',(req,res) => {
     res.send('server is ready');
 });
@@ -28,6 +27,10 @@ app.get('/api/jokes',(req,res) => {
         }
     ];
     res.send(jokes);
+ })
+
+ app.get('/',(req,res) => {
+    res.send('hello from backend');
  })
 
 const port = process.env.PORT || 3000
